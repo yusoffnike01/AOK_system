@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+    </head>
+    
+    <body>
+  
+<div class="container">
+
+<br>
+<form>
+<fieldset>
+
+<div class="form-group">
+<label>Buku</label>
+<input type="number" class="form-control prc"/>
+
+
+</div>
+<div class="form-group">
+<label>Buku22</label>
+<input type="number" class="form-control prc"  readonly value=3>
+
+
+</div>
+<div class="form-group">
+<label>Result</label>
+<output id="result"></output>
+
+
+</div>
+</fieldset>
+</form>
+</body>
+
+<script>
+$('.form-group').on('input','.prc',function(){
+
+var totalsum=0;
+$('.form-group .prc').each(function(){
+
+var inputval=$(this).val();
+if($.isNumeric(inputval)){
+totalsum+=parseFloat(inputval);
+}
+
+});
+$('#result').text(totalsum);
+});
+</script>
+</html>
